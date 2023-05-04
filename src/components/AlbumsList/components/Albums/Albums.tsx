@@ -1,20 +1,13 @@
+import { useListView } from "../../../../context/listView.context";
 import classes from "./Albums.module.css";
 import { Album } from "./components/Album/Album";
 
 export const Albums = () => {
-  // TODO: in classes.list add condition with selected display option
+  const { listView } = useListView();
+
   return (
-    <div className={`${classes.root} ${classes.grid}`}>
+    <div className={`${classes.root} ${classes[listView]}`}>
       {/* //TODO: This should be change to state mapping */}
-      <Album />
-      <Album />
-      <Album />
-      <Album />
-      <Album />
-      <Album />
-      <Album />
-      <Album />
-      <Album />
       <Album />
     </div>
   );
