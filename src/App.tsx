@@ -1,7 +1,6 @@
-import logo from "./logo.svg";
+import "./assets/styles/global.module.css";
+import "./assets/styles/variables.module.css";
 
-function App() {
-  return <div className="App">Example text</div>;
-}
-
-export default App;
+export const App = () => {
+  return <div>Example text</div>;
+};
