@@ -25,6 +25,10 @@ html {
   font-size: 62.5%;
 }
 
+button {
+  cursor: pointer;
+}
+
 button:focus-visible,
 select:focus {
   outline-width: 2px;
