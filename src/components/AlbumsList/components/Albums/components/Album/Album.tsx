@@ -5,7 +5,7 @@ import { ReactComponent as BinIcon } from "../../../../../../assets/icons/bin.sv
 export const Album = () => {
   return (
     // TODO: in data-display add condition with selected display option
-    <div className={classes.root} data-display={"list"}>
+    <div className={classes.root} data-display={"grid"}>
       <p className={classes.albumName}>Music for studying</p>
       <div className={classes.buttons}>
         <button

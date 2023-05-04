@@ -1,15 +1,13 @@
 .root {
+  padding: var(--spacing10) var(--spacing20);
+  border: 1px solid var(--greyColor);
+  border-radius: 4px;
 }
 
 .buttons {
   display: flex;
   justify-content: center;
   gap: var(--spacing20);
-}
-
-.x {
-  overflow: hidden;
-  white-space: nowrap;
 }
 
 .albumButton {
@@ -53,9 +51,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing10) var(--spacing20);
-  border: 1px solid var(--greyColor);
-  border-radius: 4px;
 }
 
 [data-display="list"] .albumName {
@@ -64,5 +59,31 @@
   white-space: nowrap;
 }
 
-[data-display="list"] .albumButton {
+.root[data-display="grid"] {
+  display: flex;
+  flex-direction: column;
+  width: 155px;
+  min-height: 155px;
+}
+
+[data-display="grid"] .albumName {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  order: 2;
+}
+
+[data-display="grid"] .buttons {
+  width: 100%;
+  justify-content: space-between;
+  order: 1;
+}
+
+@media (min-width: 912px) {
+  .root[data-display="grid"] {
+    width: 224px;
+    min-height: 224px;
+  }
 }
