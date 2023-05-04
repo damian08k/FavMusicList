@@ -1,0 +1,20 @@
+:root {
+  /* Spacings */
+  --spacing10: 10px;
+  --spacing18: 18px;
+  --spacing19: 19px;
+  --spacing20: 20px;
+  --spacing30: 30px;
+  --spacing44: 44px;
+  --spacing60: 60px;
+
+  /* Colors */
+  --blackColor: #000;
+  --whiteColor: #fff;
+  --greyColor: #dadada;
+  --purpleColor: #473adc;
+
+  /* Others */
+  --maxAppWidth: 1440px;
+  --maxContentWidth: 1240px;
+}

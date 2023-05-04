@@ -1,0 +1,34 @@
+.root {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--whiteColor);
+  border-radius: 50%;
+}
+
+.root::before,
+.root::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  height: 12px;
+  background-color: var(--whiteColor);
+}
+
+.root::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+@media (min-width: 912px) {
+  .root {
+    border-color: var(--blackColor);
+  }
+
+  .root::after,
+  .root::before {
+    background-color: var(--blackColor);
+  }
+}

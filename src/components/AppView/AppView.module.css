@@ -1,0 +1,15 @@
+.root {
+  margin: var(--spacing20) var(--spacing20) var(--spacing44);
+  max-width: var(--maxAppWidth);
+}
+
+.mainContent {
+  margin: 0 auto;
+  max-width: var(--maxContentWidth);
+}
+
+@media (min-width: 1440px) {
+  .root {
+    margin: var(--spacing60) auto;
+  }
+}

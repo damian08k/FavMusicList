@@ -24,3 +24,9 @@
 html {
   font-size: 62.5%;
 }
+
+button:focus-visible {
+  outline-width: 2px;
+  outline-color: var(--purpleColor);
+  outline-style: solid;
+}
