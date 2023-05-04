@@ -12,3 +12,16 @@
   background-color: transparent;
   border: none;
 }
+
+.gridIcon * {
+  fill: var(--blackColor);
+}
+
+.grayedOut * {
+  fill: var(--greyColor);
+  transition: fill 0.2s linear;
+}
+
+.grayedOut:hover * {
+  fill: var(--blackColor);
+}

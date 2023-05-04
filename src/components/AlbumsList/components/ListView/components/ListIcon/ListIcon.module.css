@@ -21,3 +21,16 @@
   transform: translateY(12px);
   transform-origin: left;
 }
+
+.grayedOut,
+.grayedOut::before,
+.grayedOut::after {
+  border-color: var(--greyColor);
+  transition: border-color 0.2s linear;
+}
+
+.grayedOut:hover,
+.grayedOut:hover::before,
+.grayedOut:hover::after {
+  border-color: var(--blackColor);
+}
