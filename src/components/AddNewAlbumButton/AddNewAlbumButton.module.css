@@ -1,0 +1,30 @@
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: var(--spacing30) 0;
+  padding: var(--spacing19) 0;
+  width: 100%;
+  border: 1px solid var(--blackColor);
+  border-radius: 4px;
+  background-color: var(--blackColor);
+  color: var(--whiteColor);
+}
+
+.buttonText {
+  padding-left: var(--spacing10);
+  font-size: 2rem;
+  line-height: 22px;
+}
+
+@media (min-width: 912px) {
+  .root {
+    width: auto;
+    padding: var(--spacing10) var(--spacing20);
+    background-color: var(--whiteColor);
+  }
+
+  .buttonText {
+    color: var(--blackColor);
+  }
+}

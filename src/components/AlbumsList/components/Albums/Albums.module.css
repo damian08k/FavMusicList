@@ -1,0 +1,31 @@
+.root {
+  margin-top: var(--spacing30);
+}
+
+.root.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing10);
+}
+
+.root.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+  justify-items: center;
+  justify-content: center;
+  gap: var(--spacing10);
+}
+
+@media (min-width: 912px) {
+  .root {
+    margin-top: var(--spacing16);
+  }
+  .root.list {
+    gap: var(--spacing14);
+  }
+
+  .root.grid {
+    grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
+    gap: var(--spacing30);
+  }
+}

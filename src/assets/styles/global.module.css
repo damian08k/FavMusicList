@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, Arial, sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+select:focus {
+  outline-width: 2px;
+  outline-color: var(--purpleColor);
+  outline-style: solid;
+}

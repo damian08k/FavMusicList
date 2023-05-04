@@ -1,0 +1,30 @@
+.root {
+  display: flex;
+  align-items: center;
+}
+
+.sortedByText {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.selectElement {
+  display: flex;
+  gap: var(--spacing10);
+  margin-left: var(--spacing10);
+  padding: var(--spacing10);
+  max-width: 125px;
+  font-size: 1.6rem;
+  border: 0;
+  border-right: var(--spacing10) solid transparent;
+  border-radius: 100px;
+  outline: 1px solid var(--purpleColor);
+  isolation: isolate;
+}
+
+@media (min-width: 360px) {
+  .selectElement {
+    border-right: var(--spacing20) solid transparent;
+    padding: var(--spacing10) var(--spacing20);
+  }
+}

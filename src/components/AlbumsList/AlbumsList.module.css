@@ -1,0 +1,10 @@
+.root {
+  padding: var(--spacing30) 0;
+  border-top: 1px solid var(--blackColor);
+}
+
+.topListSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

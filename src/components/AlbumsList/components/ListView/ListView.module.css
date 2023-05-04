@@ -1,0 +1,14 @@
+.root {
+  display: flex;
+  margin-left: var(--spacing26);
+}
+
+.viewButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+}

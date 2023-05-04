@@ -1,0 +1,32 @@
+.root {
+  margin: var(--spacing20) var(--spacing20) var(--spacing44);
+  max-width: var(--maxAppWidth);
+}
+
+.logo {
+  width: 168px;
+  height: 59px;
+}
+
+.logo > * {
+  width: 100%;
+  height: 100%;
+}
+
+.mainContent {
+  margin: 0 auto;
+  max-width: var(--maxContentWidth);
+}
+
+@media (min-width: 912px) {
+  .logo {
+    width: 220px;
+    height: 69px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .root {
+    margin: var(--spacing60) auto;
+  }
+}
