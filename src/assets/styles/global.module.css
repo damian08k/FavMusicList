@@ -25,7 +25,8 @@ html {
   font-size: 62.5%;
 }
 
-button:focus-visible {
+button:focus-visible,
+select:focus {
   outline-width: 2px;
   outline-color: var(--purpleColor);
   outline-style: solid;
