@@ -10,8 +10,6 @@ export const SortedBy = () => {
   const [selectedValue, setSelectedValue] = useState(
     localStorage.getItem(SELECTED_STORAGE_KEY) ?? "id"
   );
-
-  console.log(selectedValue);
   const { dispatch } = useAlbums();
 
   const handleOnChange = (evt: ChangeEvent<HTMLSelectElement>) => {

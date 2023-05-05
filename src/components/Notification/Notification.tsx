@@ -22,7 +22,6 @@ const notificationContent: NotificationType = {
 };
 
 export const Notification = ({ status }: NotificationProps) => {
-  console.log(notificationContent);
   return (
     <div className={`${classes.root} ${classes[status]}`}>
       <div className={classes.notificationIcon}>
