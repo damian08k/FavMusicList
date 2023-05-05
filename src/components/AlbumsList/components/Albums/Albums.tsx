@@ -10,7 +10,7 @@ export const Albums = () => {
   } = useAlbums();
 
   return (
-    <div className={`${classes.root} ${classes[listView]}`}>
+    <ul className={`${classes.root} ${classes[listView]}`}>
       {albums.length > 0 ? (
         albums.map(({ id, name, isTheBest }) => {
           return <Album key={id} name={name} id={id} isTheBest={isTheBest} />;
@@ -18,6 +18,6 @@ export const Albums = () => {
       ) : (
         <h2 className={classes.emptyList}>Empty albums list</h2>
       )}
-    </div>
+    </ul>
   );
 };

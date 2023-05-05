@@ -1,0 +1,15 @@
+.root {
+  background-image: url("./assets/backgrounds/background-note.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: cover;
+  margin: 0 auto;
+  max-width: var(--maxAppWidth);
+}
+
+@media (min-width: 912px) {
+  .root {
+    background-size: auto, auto;
+    background-position: top right;
+  }
+}

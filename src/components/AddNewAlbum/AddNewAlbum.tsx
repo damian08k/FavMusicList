@@ -37,7 +37,7 @@ export const AddNewAlbum = ({ onOpenForm }: AddNewAlbumProps) => {
       payload: {
         id: Date.now(),
         name: albumTitle,
-        createdAt: new Date(),
+        createdAt: new Date().getTime(),
         isTheBest: false,
       },
     });

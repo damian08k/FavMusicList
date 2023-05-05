@@ -5,14 +5,18 @@ import { AlbumsListProvider } from "./context/albumsList.context";
 import { ListViewProvider } from "./context/listView.context";
 import { NotificationProvider } from "./context/notification.context";
 
+import classes from "./App.module.css";
+
 export const App = () => {
   return (
-    <AlbumsListProvider>
-      <ListViewProvider>
-        <NotificationProvider>
-          <AppView />
-        </NotificationProvider>
-      </ListViewProvider>
-    </AlbumsListProvider>
+    <div className={classes.root}>
+      <AlbumsListProvider>
+        <ListViewProvider>
+          <NotificationProvider>
+            <AppView />
+          </NotificationProvider>
+        </ListViewProvider>
+      </AlbumsListProvider>
+    </div>
   );
 };

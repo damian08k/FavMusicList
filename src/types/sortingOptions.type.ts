@@ -1,4 +1,6 @@
+export type SortingValues = "id" | "date" | "name";
+
 export interface SortingOptions {
-  label: string;
-  value: string;
+  label: SortingValues;
+  value: SortingValues;
 }
