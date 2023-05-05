@@ -3,6 +3,7 @@ import {
   PropsWithChildren,
   useReducer,
   useContext,
+  useEffect,
 } from "react";
 import {
   AlbumsState,
@@ -12,6 +13,12 @@ import {
 
 const defaultAlbumsState: AlbumsState = {
   albums: [],
+};
+
+const getInitialState = () => {
+  const albums = localStorage.getItem("albums");
+
+  return albums ? { albums: JSON.parse(albums) } : defaultAlbumsState;
 };
 
 const AlbumsListContext = createContext({} as AlbumsListContextModel);
@@ -34,7 +41,11 @@ const albumsReducer = (
 };
 
 const AlbumsListProvider = ({ children }: PropsWithChildren) => {
-  const [state, dispatch] = useReducer(albumsReducer, defaultAlbumsState);
+  const [state, dispatch] = useReducer(albumsReducer, getInitialState());
+
+  useEffect(() => {
+    localStorage.setItem("albums", JSON.stringify(state.albums));
+  });
 
   const value = { state, dispatch };
 
