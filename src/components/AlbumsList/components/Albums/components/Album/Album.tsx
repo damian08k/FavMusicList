@@ -3,13 +3,16 @@ import { ReactComponent as StarIcon } from "../../../../../../assets/icons/star.
 import { ReactComponent as BinIcon } from "../../../../../../assets/icons/bin.svg";
 import { useListView } from "../../../../../../context/listView.context";
 
-export const Album = () => {
+interface AlbumProps {
+  name: string;
+}
+
+export const Album = ({ name }: AlbumProps) => {
   const { listView } = useListView();
 
   return (
-    // TODO: in data-display add condition with selected display option
     <div className={classes.root} data-display={listView}>
-      <p className={classes.albumName}>Music for studying</p>
+      <p className={classes.albumName}>{name}</p>
       <div className={classes.buttons}>
         <button
           className={classes.albumButton}
