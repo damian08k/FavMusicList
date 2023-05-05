@@ -54,6 +54,37 @@ const albumsReducer = (
 
       return { albums: [...newState] };
     }
+    case "SORTING": {
+      const stateCopy = [...state.albums];
+      if (action.payload === "id") {
+        // Sorting from oldest to newest
+        const sortedState = stateCopy.sort((a, b) => a.id - b.id);
+        return { albums: [...sortedState] };
+      }
+
+      if (action.payload === "name") {
+        const sortedState = stateCopy.sort((a, b) => {
+          if (a.name < b.name) {
+            return -1;
+          }
+          if (a.name > b.name) {
+            return 1;
+          }
+          return 0;
+        });
+        return { albums: [...sortedState] };
+      }
+
+      if (action.payload === "date") {
+        // Sorting from newest to oldest
+        const sortedState = stateCopy.sort((a, b) => {
+          return b.createdAt - a.createdAt;
+        });
+
+        return { albums: [...sortedState] };
+      }
+      return { ...state };
+    }
     default: {
       throw new Error(`Unhandled action type`);
     }
