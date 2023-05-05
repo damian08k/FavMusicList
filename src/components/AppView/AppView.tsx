@@ -5,10 +5,12 @@ import { AddNewAlbumButton } from "../AddNewAlbumButton/AddNewAlbumButton";
 import { AlbumsList } from "../AlbumsList/AlbumsList";
 import classes from "./AppView.module.css";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
+import { useNotification } from "../../context/notification.context";
 
 export const AppView = () => {
   const [isAddAlbumFormOpen, setIsAddAlbumFormOpen] = useState(false);
   const isDesktopView = useMediaQuery("(min-width: 912px)");
+  const { status } = useNotification();
 
   const isAddAlbumButtonVisible =
     isDesktopView || (!isAddAlbumFormOpen && !isDesktopView);

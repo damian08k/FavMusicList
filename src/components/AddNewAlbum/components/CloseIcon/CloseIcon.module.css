@@ -25,9 +25,19 @@
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
+.error::before,
+.error::after {
+  background-color: var(--errorColor);
+}
+
 @media (min-width: 912px) {
   .root::before,
   .root::after {
     background-color: var(--blackColor);
+  }
+
+  .error::before,
+  .error::after {
+    background-color: var(--errorColor);
   }
 }

@@ -1,0 +1,45 @@
+.root {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing18) var(--spacing20);
+  margin: var(--spacing20) 0;
+  min-width: 339px;
+  max-width: 100%;
+  height: 60px;
+  border-radius: var(--radius4);
+}
+
+.error {
+  border: 1px solid var(--errorColor);
+  background-color: var(--errorBackground);
+}
+
+.success {
+  border: 1px solid var(--successColor);
+  background-color: var(--successBackground);
+}
+
+.notificationIcon {
+  height: 24px;
+  width: 24px;
+  background-color: inherit;
+}
+
+.notificationText {
+  padding-left: var(--spacing10);
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.success .notificationText {
+  color: var(--successColor);
+}
+
+.error .notificationText {
+  color: var(--errorColor);
+}
+
+.error .notificationIcon {
+  border: 2px solid var(--errorColor);
+  border-radius: 50%;
+}

@@ -1,5 +1,11 @@
 import classes from "./CloseIcon.module.css";
 
-export const CloseIcon = () => {
-  return <span className={classes.root} />;
+interface CloseIconProps {
+  isNotification?: boolean;
+}
+
+export const CloseIcon = ({ isNotification }: CloseIconProps) => {
+  return (
+    <span className={`${classes.root} ${isNotification && classes.error}`} />
+  );
 };

@@ -3,14 +3,20 @@ import { Dispatch, SetStateAction, useState, ChangeEvent } from "react";
 import classes from "./AddNewAlbum.module.css";
 import { CloseIcon } from "./components/CloseIcon/CloseIcon";
 import { useAlbums } from "../../context/albumsList.context";
+import { Notification } from "../Notification/Notification";
+import { useNotification } from "../../context/notification.context";
+import { stat } from "fs";
 
 interface AddNewAlbumProps {
   onOpenForm: Dispatch<SetStateAction<boolean>>;
 }
 
+const ALBUM_TITLE_MIN_LENGTH = 2;
+
 export const AddNewAlbum = ({ onOpenForm }: AddNewAlbumProps) => {
   const [albumTitle, setAlbumTitle] = useState("");
   const { dispatch } = useAlbums();
+  const { status, setStatus } = useNotification();
 
   const handleAlbumTitle = (evt: ChangeEvent<HTMLInputElement>) => {
     setAlbumTitle(evt.target.value);
@@ -18,6 +24,13 @@ export const AddNewAlbum = ({ onOpenForm }: AddNewAlbumProps) => {
 
   const handleAddNewAlbum = (evt: ChangeEvent<HTMLFormElement>) => {
     evt.preventDefault();
+
+    if (albumTitle.length < ALBUM_TITLE_MIN_LENGTH) {
+      setStatus("error");
+      return;
+    }
+
+    setStatus("success");
     dispatch({
       type: "ADD_ALBUM",
       payload: {
@@ -27,6 +40,10 @@ export const AddNewAlbum = ({ onOpenForm }: AddNewAlbumProps) => {
       },
     });
     setAlbumTitle("");
+
+    setTimeout(() => {
+      setStatus(null);
+    }, 3000);
   };
 
   return (
@@ -44,6 +61,7 @@ export const AddNewAlbum = ({ onOpenForm }: AddNewAlbumProps) => {
             </button>
           </div>
         </div>
+        {status && <Notification status={status} />}
         <form className={classes.addNewAlbumForm} onSubmit={handleAddNewAlbum}>
           <input
             type="text"

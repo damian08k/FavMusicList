@@ -16,7 +16,12 @@
   --whiteColor: #fff;
   --greyColor: #dadada;
   --purpleColor: #473adc;
+  --successColor: #04bc0c;
+  --errorColor: #ed0401;
 
+  /* Backgrounds */
+  --successBackground: #dfefe8;
+  --errorBackground: #efe4e4;
   /* Radius */
   --radius4: 4px;
 
