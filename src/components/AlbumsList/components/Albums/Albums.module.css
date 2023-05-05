@@ -1,5 +1,6 @@
 .root {
   margin-top: var(--spacing30);
+  list-style-type: none;
 }
 
 .root.list {

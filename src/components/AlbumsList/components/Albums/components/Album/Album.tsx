@@ -15,7 +15,7 @@ export const Album = ({ id, name, isTheBest }: AlbumProps) => {
   const { dispatch } = useAlbums();
 
   return (
-    <div className={classes.root} data-display={listView}>
+    <li className={classes.root} data-display={listView}>
       <p className={classes.albumName}>{name}</p>
       <div className={classes.buttons}>
         <button
@@ -35,6 +35,6 @@ export const Album = ({ id, name, isTheBest }: AlbumProps) => {
           <BinIcon className={classes.binIcon} />
         </button>
       </div>
-    </div>
+    </li>
   );
 };
