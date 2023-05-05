@@ -38,6 +38,7 @@ export const AddNewAlbum = ({ onOpenForm }: AddNewAlbumProps) => {
         id: Date.now(),
         name: albumTitle,
         createdAt: new Date(),
+        isTheBest: false,
       },
     });
     setAlbumTitle("");
