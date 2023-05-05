@@ -5,13 +5,14 @@ import { CloseIcon } from "./components/CloseIcon/CloseIcon";
 import { useAlbums } from "../../context/albumsList.context";
 import { Notification } from "../Notification/Notification";
 import { useNotification } from "../../context/notification.context";
-import { stat } from "fs";
+import {
+  ALBUM_TITLE_MIN_LENGTH,
+  HIDE_NOTIFICATION_TIMEOUT,
+} from "../../contants";
 
 interface AddNewAlbumProps {
   onOpenForm: Dispatch<SetStateAction<boolean>>;
 }
-
-const ALBUM_TITLE_MIN_LENGTH = 2;
 
 export const AddNewAlbum = ({ onOpenForm }: AddNewAlbumProps) => {
   const [albumTitle, setAlbumTitle] = useState("");
@@ -43,7 +44,7 @@ export const AddNewAlbum = ({ onOpenForm }: AddNewAlbumProps) => {
 
     setTimeout(() => {
       setStatus(null);
-    }, 3000);
+    }, HIDE_NOTIFICATION_TIMEOUT);
   };
 
   return (
