@@ -17,6 +17,12 @@
   --greyColor: #dadada;
   --purpleColor: #473adc;
 
+  /* Radius */
+  --radius4: 4px;
+
+  /* Z-indexes */
+  --popupIndex: 1000;
+
   /* Others */
   --maxAppWidth: 1440px;
   --maxContentWidth: 1240px;

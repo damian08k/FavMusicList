@@ -16,6 +16,10 @@
   gap: var(--spacing10);
 }
 
+.emptyList {
+  text-align: center;
+}
+
 @media (min-width: 912px) {
   .root {
     margin-top: var(--spacing16);

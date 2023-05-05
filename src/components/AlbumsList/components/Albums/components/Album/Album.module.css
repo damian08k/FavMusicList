@@ -1,7 +1,7 @@
 .root {
   padding: var(--spacing10) var(--spacing20);
   border: 1px solid var(--greyColor);
-  border-radius: 4px;
+  border-radius: var(--radius4);
 }
 
 .buttons {

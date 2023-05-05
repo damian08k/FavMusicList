@@ -6,7 +6,7 @@
   padding: var(--spacing19) 0;
   width: 100%;
   border: 1px solid var(--blackColor);
-  border-radius: 4px;
+  border-radius: var(--radius4);
   background-color: var(--blackColor);
   color: var(--whiteColor);
 }
