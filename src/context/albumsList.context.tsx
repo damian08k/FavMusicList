@@ -37,8 +37,22 @@ const albumsReducer = (
     case "REMOVE_ALBUM": {
       return {
         ...state,
-        albums: state.albums.filter((album) => album.id !== action.payload),
+        albums: state.albums.filter(({ id }) => id !== action.payload),
       };
+    }
+    case "MARK": {
+      const newState = state.albums.map((album) => {
+        if (album.id === action.payload) {
+          return {
+            ...album,
+            isTheBest: !album.isTheBest,
+          };
+        }
+
+        return album;
+      });
+
+      return { albums: [...newState] };
     }
     default: {
       throw new Error(`Unhandled action type`);

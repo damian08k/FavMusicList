@@ -12,8 +12,8 @@ export const Albums = () => {
   return (
     <div className={`${classes.root} ${classes[listView]}`}>
       {albums.length > 0 ? (
-        albums.map(({ id, name }) => {
-          return <Album key={id} name={name} id={id} />;
+        albums.map(({ id, name, isTheBest }) => {
+          return <Album key={id} name={name} id={id} isTheBest={isTheBest} />;
         })
       ) : (
         <h2 className={classes.emptyList}>Empty albums list</h2>

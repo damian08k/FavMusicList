@@ -38,7 +38,8 @@
   transition-property: all;
 }
 
-.starIcon:hover path {
+.starIcon:hover path,
+.theBest path {
   fill: var(--purpleColor);
 }
 

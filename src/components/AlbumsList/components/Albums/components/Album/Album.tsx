@@ -7,11 +7,14 @@ import { useAlbums } from "../../../../../../context/albumsList.context";
 interface AlbumProps {
   id: number;
   name: string;
+  isTheBest: boolean;
 }
 
-export const Album = ({ id, name }: AlbumProps) => {
+export const Album = ({ id, name, isTheBest }: AlbumProps) => {
   const { listView } = useListView();
-  const { dispatch } = useAlbums();
+  const { state, dispatch } = useAlbums();
+
+  console.log(state.albums);
 
   return (
     <div className={classes.root} data-display={listView}>
@@ -20,8 +23,11 @@ export const Album = ({ id, name }: AlbumProps) => {
         <button
           className={classes.albumButton}
           aria-label="Mark album as best of the best"
+          onClick={() => dispatch({ type: "MARK", payload: id })}
         >
-          <StarIcon className={classes.starIcon} />
+          <StarIcon
+            className={`${classes.starIcon} ${isTheBest && classes.theBest}`}
+          />
         </button>
         <button
           className={classes.albumButton}

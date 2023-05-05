@@ -4,6 +4,7 @@ export interface AlbumItem {
   id: number;
   createdAt: Date;
   name: string;
+  isTheBest: boolean;
 }
 
 export interface AlbumsState {
@@ -12,7 +13,8 @@ export interface AlbumsState {
 
 export type AlbumsActions =
   | { type: "ADD_ALBUM"; payload: AlbumItem }
-  | { type: "REMOVE_ALBUM"; payload: number };
+  | { type: "REMOVE_ALBUM"; payload: number }
+  | { type: "MARK"; payload: number };
 
 export interface AlbumsListContextModel {
   state: AlbumsState;
