@@ -2,7 +2,7 @@ import { Dispatch } from "react";
 
 export interface AlbumItem {
   id: number;
-  date: Date;
+  createdAt: Date;
   name: string;
 }
 
