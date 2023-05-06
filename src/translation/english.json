@@ -1,0 +1,16 @@
+{
+  "Add new album": "Add new album",
+  "Album added successfully! You can close form or add new album!": "Album added successfully! You can close form or add new album!",
+  "Album title should contain minimum 2 characters!": "Album title should contain minimum 2 characters!",
+  "Sorted by": "Sorted by",
+  "date": "date",
+  "name": "name",
+  "Display list in list view": "Display list in list view",
+  "Display list in grid view": "Display list in grid view",
+  "Empty albums list": "Albums list is empty",
+  "Mark album as best of the best": "Mark album as best of the best",
+  "Remove album from list": "Remove album from list",
+  "Close adding new album form": "Close adding new album form",
+  "Title": "Title",
+  "Add album": "Add album"
+}

@@ -4,7 +4,7 @@ import { AppView } from "./components/AppView/AppView";
 import { AlbumsListProvider } from "./context/albumsList.context";
 import { ListViewProvider } from "./context/listView.context";
 import { NotificationProvider } from "./context/notification.context";
-
+import { Suspense } from "react";
 import classes from "./App.module.css";
 
 export const App = () => {
@@ -13,7 +13,9 @@ export const App = () => {
       <AlbumsListProvider>
         <ListViewProvider>
           <NotificationProvider>
-            <AppView />
+            <Suspense fallback="Loading">
+              <AppView />
+            </Suspense>
           </NotificationProvider>
         </ListViewProvider>
       </AlbumsListProvider>

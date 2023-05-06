@@ -5,12 +5,14 @@ import { sortingOptions } from "./data/sortingOptions";
 import { useAlbums } from "../../../../context/albumsList.context";
 import { SortingValues } from "../../../../types/sortingOptions.type";
 import { SELECTED_STORAGE_KEY } from "../../../../contants";
+import { useTranslation } from "react-i18next";
 
 export const SortedBy = () => {
   const [selectedValue, setSelectedValue] = useState(
     localStorage.getItem(SELECTED_STORAGE_KEY) ?? "id"
   );
   const { dispatch } = useAlbums();
+  const { t } = useTranslation();
 
   const handleOnChange = (evt: ChangeEvent<HTMLSelectElement>) => {
     const selectedOption = evt.target.value as SortingValues;
@@ -25,15 +27,15 @@ export const SortedBy = () => {
 
   return (
     <div className={classes.root}>
-      <p className={classes.sortedByText}>Sorted by:</p>
+      <p className={classes.sortedByText}>{`${t("Sorted by")}:`}</p>
       <select
         className={classes.selectElement}
         onChange={handleOnChange}
         value={selectedValue}
       >
         {sortingOptions.map(({ label, value }) => (
-          <option key={label} value={value}>
-            {label}
+          <option key={t(label)} value={value}>
+            {t(label)}
           </option>
         ))}
       </select>

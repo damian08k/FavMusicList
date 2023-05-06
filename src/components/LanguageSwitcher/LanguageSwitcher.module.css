@@ -1,0 +1,44 @@
+.root {
+  display: flex;
+  gap: var(--spacing20);
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}
+
+.languageButton {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+}
+
+.selected {
+  border: 1.5px solid var(--purpleColor);
+}
+
+.languageButton.pl {
+  background-image: url("../../assets/languages/polish.svg");
+}
+
+.languageButton.en {
+  background-image: url("../../assets/languages/english.svg");
+}
+
+.languageButton.pl,
+.languageButton.en {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 912px) {
+  .root {
+    justify-content: flex-end;
+  }
+}

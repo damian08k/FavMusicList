@@ -1,0 +1,16 @@
+{
+  "Add new album": "Dodaj nowy album",
+  "Album added successfully! You can close form or add new album!": "Album dodany pomyślnie! Możesz zamknąć formularz lub dodać nowy album!",
+  "Album title should contain minimum 2 characters!": "Tytuł albumu powinien zawierać minimum 2 znaki!",
+  "Sorted by": "Sortuj",
+  "date": "data",
+  "name": "tytuł",
+  "Display list in list view": "Wyświetl listę w widoku listy",
+  "Display list in grid view": "Wyświetl listę w widoku siatki",
+  "Empty albums list": "Lista albumów jest pusta",
+  "Mark album as best of the best": "Oznacz album jako najlepszy",
+  "Remove album from list": "Usuń album z listy",
+  "Close adding new album form": "Zamknij formularz dodawania nowego albumu",
+  "Title": "Tytuł",
+  "Add album": "Dodaj album"
+}

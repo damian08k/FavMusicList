@@ -3,6 +3,7 @@ import { ReactComponent as StarIcon } from "../../../../../../assets/icons/star.
 import { ReactComponent as BinIcon } from "../../../../../../assets/icons/bin.svg";
 import { useListView } from "../../../../../../context/listView.context";
 import { useAlbums } from "../../../../../../context/albumsList.context";
+import { useTranslation } from "react-i18next";
 
 interface AlbumProps {
   id: number;
@@ -13,6 +14,7 @@ interface AlbumProps {
 export const Album = ({ id, name, isTheBest }: AlbumProps) => {
   const { listView } = useListView();
   const { dispatch } = useAlbums();
+  const { t } = useTranslation();
 
   return (
     <li className={classes.root} data-display={listView}>
@@ -20,7 +22,7 @@ export const Album = ({ id, name, isTheBest }: AlbumProps) => {
       <div className={classes.buttons}>
         <button
           className={classes.albumButton}
-          aria-label="Mark album as best of the best"
+          aria-label={`${t("Mark album as best of the best")}`}
           onClick={() => dispatch({ type: "MARK", payload: id })}
         >
           <StarIcon
@@ -29,7 +31,7 @@ export const Album = ({ id, name, isTheBest }: AlbumProps) => {
         </button>
         <button
           className={classes.albumButton}
-          aria-label="Remove album from list"
+          aria-label={`${t("Remove album from list")}`}
           onClick={() => dispatch({ type: "REMOVE_ALBUM", payload: id })}
         >
           <BinIcon className={classes.binIcon} />

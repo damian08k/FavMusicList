@@ -9,6 +9,7 @@ import {
   ALBUM_TITLE_MIN_LENGTH,
   HIDE_NOTIFICATION_TIMEOUT,
 } from "../../contants";
+import { useTranslation } from "react-i18next";
 
 interface AddNewAlbumProps {
   onOpenForm: Dispatch<SetStateAction<boolean>>;
@@ -18,6 +19,7 @@ export const AddNewAlbum = ({ onOpenForm }: AddNewAlbumProps) => {
   const [albumTitle, setAlbumTitle] = useState("");
   const { dispatch } = useAlbums();
   const { status, setStatus } = useNotification();
+  const { t } = useTranslation();
 
   const handleAlbumTitle = (evt: ChangeEvent<HTMLInputElement>) => {
     setAlbumTitle(evt.target.value);
@@ -52,11 +54,11 @@ export const AddNewAlbum = ({ onOpenForm }: AddNewAlbumProps) => {
     <div className={classes.overlay}>
       <div className={classes.root}>
         <div className={classes.topPanel}>
-          <h2 className={classes.addNewAlbumText}>Add new album</h2>
+          <h2 className={classes.addNewAlbumText}>{t("Add new album")}</h2>
           <div className={classes.buttonContainer}>
             <button
               className={classes.closeAddingAlbumButton}
-              aria-label="Close adding new album form"
+              aria-label={`${t("Close adding new album form")}`}
               onClick={() => onOpenForm(false)}
             >
               <CloseIcon />
@@ -68,12 +70,16 @@ export const AddNewAlbum = ({ onOpenForm }: AddNewAlbumProps) => {
           <input
             type="text"
             value={albumTitle}
-            placeholder="Title"
+            placeholder={`${t("Title")}`}
             className={classes.titleInput}
             onChange={handleAlbumTitle}
           />
-          <button type="submit" className={classes.addNewAlbumButton}>
-            Add album
+          <button
+            type="submit"
+            className={classes.addNewAlbumButton}
+            aria-label={`${t("Add album")}`}
+          >
+            {t("Add album")}
           </button>
         </form>
       </div>
