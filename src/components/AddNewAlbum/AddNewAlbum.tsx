@@ -10,6 +10,7 @@ import {
   HIDE_NOTIFICATION_TIMEOUT,
 } from "../../contants";
 import { useTranslation } from "react-i18next";
+import { ALBUMS } from "../../testIds";
 
 interface AddNewAlbumProps {
   onOpenForm: Dispatch<SetStateAction<boolean>>;
@@ -66,18 +67,24 @@ export const AddNewAlbum = ({ onOpenForm }: AddNewAlbumProps) => {
           </div>
         </div>
         {status && <Notification status={status} />}
-        <form className={classes.addNewAlbumForm} onSubmit={handleAddNewAlbum}>
+        <form
+          className={classes.addNewAlbumForm}
+          onSubmit={handleAddNewAlbum}
+          data-testid={ALBUMS.CREATE_NEW_ALBUM_FORM}
+        >
           <input
             type="text"
             value={albumTitle}
             placeholder={`${t("Title")}`}
             className={classes.titleInput}
             onChange={handleAlbumTitle}
+            data-testid={ALBUMS.ALBUM_TITLE_INPUT}
           />
           <button
             type="submit"
             className={classes.addNewAlbumButton}
             aria-label={`${t("Add album")}`}
+            data-testid={ALBUMS.CREATE_ALBUM}
           >
             {t("Add album")}
           </button>
