@@ -6,6 +6,7 @@ export type NotificationContextStatus = NotificationStatus | null;
 type NotificationElement = {
   icon: ReactNode;
   text: string;
+  testId: string;
 };
 
 export type NotificationType = {
