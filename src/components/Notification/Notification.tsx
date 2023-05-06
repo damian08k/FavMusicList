@@ -5,6 +5,7 @@ import {
   NotificationStatus,
   NotificationType,
 } from "../../types/notification.type";
+import { useTranslation } from "react-i18next";
 
 interface NotificationProps {
   status: NotificationStatus;
@@ -22,13 +23,15 @@ const notificationContent: NotificationType = {
 };
 
 export const Notification = ({ status }: NotificationProps) => {
+  const { t } = useTranslation();
+
   return (
     <div className={`${classes.root} ${classes[status]}`}>
       <div className={classes.notificationIcon}>
         {notificationContent[status].icon}
       </div>
       <h3 className={classes.notificationText}>
-        {notificationContent[status].text}
+        {t(notificationContent[status].text)}
       </h3>
     </div>
   );

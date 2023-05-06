@@ -5,6 +5,7 @@
   background-size: cover;
   margin: 0 auto;
   max-width: var(--maxAppWidth);
+  min-height: 100vh;
 }
 
 @media (min-width: 912px) {

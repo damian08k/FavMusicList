@@ -32,13 +32,36 @@
   order: 2;
 }
 
+.languageSwitcher {
+  order: 4;
+}
+
 @media (min-width: 912px) {
-  .header {
+  .root {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .header,
+  .languageSwitcher {
     margin-top: var(--spacing60);
+    flex-basis: 50%;
   }
 
   .logo {
     width: 220px;
     height: 69px;
+  }
+
+  .languageSwitcher {
+    order: 2;
+  }
+
+  .modal {
+    order: 3;
+  }
+
+  .mainContent {
+    order: 4;
   }
 }

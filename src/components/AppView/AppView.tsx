@@ -5,6 +5,7 @@ import { AddNewAlbumButton } from "../AddNewAlbumButton/AddNewAlbumButton";
 import { AlbumsList } from "../AlbumsList/AlbumsList";
 import classes from "./AppView.module.css";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
+import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher";
 
 export const AppView = () => {
   const [isAddAlbumFormOpen, setIsAddAlbumFormOpen] = useState(false);
@@ -31,6 +32,9 @@ export const AppView = () => {
           <AddNewAlbum onOpenForm={setIsAddAlbumFormOpen} />
         </div>
       )}
+      <div className={classes.languageSwitcher}>
+        <LanguageSwitcher />
+      </div>
     </div>
   );
 };
